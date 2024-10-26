@@ -5,7 +5,7 @@ export const Content = (data: { text: string }) => {
   const { text } = data;
 
   const textUrlDivision = text.split(url);
-  const matchesUrl = text.match(url) || [];
+  const matchesUrl: string[] = text.match(url) || [];
 
   const handleVideoUrl = (url: string) => {
     return url.toLowerCase().match(movie);
