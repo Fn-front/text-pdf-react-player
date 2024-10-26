@@ -13,8 +13,8 @@ const noto = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "テンプレ",
-  description: "テンプレ",
+  title: "テキストリンクに応じて出力を分けるモック",
+  description: "テキストリンクに応じて出力を分けるモック",
 };
 
 export default function RootLayout({
