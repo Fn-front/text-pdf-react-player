@@ -1,4 +1,5 @@
 import { url, movie } from '@/functions/constants/regex'
+import VideoPlayer from '@/features/ui/chat/videoPlayer/'
 
 export const Content = (data: { text: string }) => {
 
@@ -15,14 +16,15 @@ export const Content = (data: { text: string }) => {
     return url.toLowerCase().endsWith('.pdf');
   };
 
-
   return (
     <>
       {textUrlDivision.map((item, index) => {
         if (matchesUrl.includes(item)) {
           if (handleVideoUrl(item)) {
             return (
-              <span key={`video-${item}`}>{item}</span>
+              <div key={`video-${item}`}>
+                <VideoPlayer url={item} />
+              </div>
             )
           }
           else if (handlePdfUrl(item)) {
@@ -40,7 +42,15 @@ export const Content = (data: { text: string }) => {
           }
           else {
             return (
-              <span key={`url-${item}`}>{item}</span>
+              <a
+                key={`url-${item}`}
+                href={item}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#2563eb', textDecoration: 'underline' }}
+              >
+                {item}
+              </a>
             );
           }
         }
