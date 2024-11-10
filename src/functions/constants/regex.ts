@@ -9,4 +9,4 @@ export const url =
 /**
  * 動画の拡張子
  */
-export const movie = /\.(mp4|webm|ogg)$|youtu(?:be\.com|\.be)/;
+export const movie = /\.(mp4|webm|ogg|mov)$|youtu(?:be\.com|\.be)/;
